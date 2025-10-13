@@ -1,3 +1,9 @@
-# techno-glossary
+# Techno glossary
 
-A list of terms, aimed at beginers for creating techno music specifically
+This #html based project is simple because that's all it needs. Good #html is valuable, with the #web-performance and #accessibility of this work demonstrating that.
+
+The project is aimed at beginner level music producers in the electronic dance music space. Ultimately it should cover a broad range of topics but for now it's a work in progress. It is likely that the terms will be categorised at some point in the future.
+
+# Open source
+
+This project would be a great way for someone to break into open source in a simple and forgiving environment.
