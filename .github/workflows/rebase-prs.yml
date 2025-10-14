@@ -39,58 +39,61 @@ jobs:
         run: |
           # Split comma-separated PR numbers
           IFS=',' read -ra PRS <<< "$PR_NUMBERS"
-          
+
           for PR_NUM in "${PRS[@]}"; do
             # Trim whitespace
             PR_NUM=$(echo "$PR_NUM" | tr -d '[:space:]')
-            
+
             echo "Processing PR #$PR_NUM..."
-            
+
             # Get PR details using GitHub CLI
             PR_BRANCH=$(gh pr view "$PR_NUM" --json headRefName -q '.headRefName')
-            
+
             if [ -z "$PR_BRANCH" ]; then
               echo "⚠️  Could not find PR #$PR_NUM"
               continue
             fi
-            
+
             echo "📝 PR #$PR_NUM uses branch: $PR_BRANCH"
-            
+
             # Checkout the PR branch
             git checkout "$PR_BRANCH" || {
               echo "⚠️  Failed to checkout $PR_BRANCH"
               continue
             }
-            
+
             # Attempt to rebase onto main
             if git rebase origin/main; then
               echo "✅ Successfully rebased $PR_BRANCH onto main"
-              
+
               # Force push the rebased branch
               git push origin "$PR_BRANCH" --force-with-lease || {
                 echo "⚠️  Failed to push rebased branch $PR_BRANCH"
                 git rebase --abort
                 continue
               }
-              
+
               echo "✅ Successfully updated PR #$PR_NUM"
             else
               echo "❌ Rebase conflict on $PR_BRANCH - manual resolution required"
               git rebase --abort
-              
+
               # Add comment to PR about the conflict
-              gh pr comment "$PR_NUM" --body "⚠️ Automated rebase failed due to conflicts. Please rebase this PR manually:
-\`\`\`bash
-git fetch origin
-git checkout $PR_BRANCH
-git rebase origin/main
-# Resolve any conflicts
-git push origin $PR_BRANCH --force-with-lease
-\`\`\`"
+              COMMENT_BODY="⚠️ Automated rebase failed due to conflicts. Please rebase this PR manually:
+
+              \`\`\`bash
+              git fetch origin
+              git checkout $PR_BRANCH
+              git rebase origin/main
+              # Resolve any conflicts
+              git push origin $PR_BRANCH --force-with-lease
+              \`\`\`"
+
+              gh pr comment "$PR_NUM" --body "$COMMENT_BODY"
             fi
-            
+
             # Return to main branch
             git checkout main
           done
-          
+
           echo "✨ Rebase operation completed!"
