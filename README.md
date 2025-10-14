@@ -29,3 +29,6 @@ To keep pull requests up-to-date with the latest `main` branch, you can use the 
 ```
 
 For detailed instructions, see [.github/workflows/README.md](.github/workflows/README.md).
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
