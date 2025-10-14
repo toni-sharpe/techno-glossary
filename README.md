@@ -7,3 +7,7 @@ The project is aimed at beginner level music producers in the electronic dance m
 # Open source
 
 This project would be a great way for someone to break into **open-source** in a simple and forgiving environment.
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
