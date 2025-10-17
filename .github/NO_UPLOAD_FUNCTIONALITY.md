@@ -46,7 +46,7 @@ Content should be added by:
 3. **Adding new `<li>` and `<article>` elements**
 4. **Submitting changes via pull requests**
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) for detailed instructions.
+See [CONTRIBUTING.md](/CONTRIBUTING.md) for detailed instructions.
 
 ## Why No Upload Functionality?
 
@@ -82,6 +82,6 @@ The "fix" for the 403 error is to:
 ## Questions?
 
 If you have questions about contributing content, see:
-- [CONTRIBUTING.md](../CONTRIBUTING.md) - Contribution guidelines
-- [README.md](../README.md) - Project overview
-- [.github/copilot-instructions.md](copilot-instructions.md) - Development guidelines
+- [CONTRIBUTING.md](/CONTRIBUTING.md) - Contribution guidelines
+- [README.md](/README.md) - Project overview
+- [.github/copilot-instructions.md](/. github/copilot-instructions.md) - Development guidelines
