@@ -4,6 +4,8 @@ This **html** based project is simple because that's all it needs. Good **html**
 
 The project is aimed at beginner level music producers in the electronic dance music space. Ultimately it should cover a broad range of topics but for now it's a work in progress. It is likely that the terms will be categorised at some point in the future.
 
+**Note:** This is a static, read-only HTML glossary. It does not include forms, upload functionality, or any server-side processing. Content is managed directly through the `index.html` file.
+
 # Open source
 
 This project would be a great way for someone to break into **open-source** in a simple and forgiving environment.
