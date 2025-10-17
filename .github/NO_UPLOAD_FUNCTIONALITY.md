@@ -84,4 +84,4 @@ The "fix" for the 403 error is to:
 If you have questions about contributing content, see:
 - [CONTRIBUTING.md](/CONTRIBUTING.md) - Contribution guidelines
 - [README.md](/README.md) - Project overview
-- [.github/copilot-instructions.md](/. github/copilot-instructions.md) - Development guidelines
+- [.github/copilot-instructions.md](/.github/copilot-instructions.md) - Development guidelines
